@@ -1,4 +1,5 @@
 #!/usr/bin/python
+import math
 
 
 def outlierCleaner(predictions, ages, net_worths):
@@ -14,7 +15,11 @@ def outlierCleaner(predictions, ages, net_worths):
     cleaned_data = []
 
     ### your code goes here
-
+    for i in range(0,90):
+        cleaned_data.append([ages[i], net_worths[i], math.fabs(predictions[i]-net_worths[i])])
+    
+    cleaned_data = sorted(cleaned_data, key=lambda x: x[2])
+    cleaned_data = cleaned_data[: -10] 
     
     return cleaned_data
 

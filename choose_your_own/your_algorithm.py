@@ -1,5 +1,5 @@
 #!/usr/bin/python
-
+	
 import matplotlib.pyplot as plt
 from prep_terrain_data import makeTerrainData
 from class_vis import prettyPicture
@@ -31,12 +31,19 @@ plt.show()
 ### your code here!  name your classifier object clf if you want the 
 ### visualization code (prettyPicture) to show you the decision boundary
 
+from sklearn.ensemble import RandomForestClassifier
+clf = RandomForestClassifier(n_estimators=10)
+clf = clf.fit(features_train, labels_train)
 
+print 1
+results = clf.predict(features_test)
 
+print 2
+from sklearn.metrics import accuracy_score
 
-
-
-
+print 3
+acc = accuracy_score(results, labels_test)
+print acc
 
 try:
     prettyPicture(clf, features_test, labels_test)
