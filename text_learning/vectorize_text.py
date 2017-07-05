@@ -52,7 +52,7 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
             ### use str.replace() to remove any instances of the words
             ### ["sara", "shackleton", "chris", "germani"]
           
-            my_content = content.replace("sara", '').replace("shackleton", '').replace("chris", '').replace("germani", '')
+            my_content = content.replace("sara", '').replace("shackleton", '').replace("chris", '').replace("germani", '').replace('sshacklensf', '').replace('cgermannsf', '')
 
             ### append the text to word_data
             import re
